@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { Providers } from "./providers";
+import { Navbar } from "./components/navbar";
+import { Footer } from "./components/footer";
 
 export const metadata: Metadata = {
   title: "Landmark Financial Corporation",
@@ -11,7 +14,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <Providers>
+          <Navbar />
+          {children}
+          <Footer />
+        </Providers>
+      </body>
     </html>
   );
 }

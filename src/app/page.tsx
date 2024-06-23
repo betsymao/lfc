@@ -1,11 +1,20 @@
-import Link from "next/link";
+"use client";
+import { Link } from "@chakra-ui/next-js";
+
+import Hero from "./components/home/hero";
 
 export default function Home() {
   return (
-    <main>
-      <h1>Heading</h1>
+    <>
+      <Hero />
 
-      <Link href="/about/director">Director</Link>
+      <Link
+        href="/about/director"
+        color="blue.400"
+        _hover={{ color: "blue.500" }}
+      >
+        Director
+      </Link>
       <Link href="/about/overview">Overview</Link>
       <Link href="/about/partners">Partners</Link>
 
@@ -17,6 +26,6 @@ export default function Home() {
       <Link href="/services/refinancing">Refinancing</Link>
 
       <Link href="/contact">Contact</Link>
-    </main>
+    </>
   );
 }
