@@ -1,11 +1,12 @@
 "use client";
-
+import { Link } from "@chakra-ui/next-js";
 import {
   Box,
+  Button,
   Flex,
   Text,
   IconButton,
-  Button,
+  Image,
   Stack,
   Collapse,
   Icon,
@@ -29,18 +30,35 @@ export function Navbar() {
   return (
     <Box>
       <Flex
-        bg={useColorModeValue("white", "gray.800")}
-        color={useColorModeValue("gray.600", "white")}
+        bg={"black"}
+        color={"white"}
         minH={"60px"}
-        py={{ base: 2 }}
+        py={{ base: 4 }}
         px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={"solid"}
-        borderColor={useColorModeValue("gray.200", "gray.900")}
-        align={"center"}
       >
         <Flex
-          flex={{ base: 1, md: "auto" }}
+          flex={{ base: 1 }}
+          align={"center"}
+          // justify={{ base: "center", md: "start" }}
+        >
+          <Text
+            textAlign={useBreakpointValue({ base: "center", md: "left" })}
+            fontFamily={"heading"}
+            color={"white"}
+          >
+            <Link href="/">
+              <Image src="/logo.svg" alt="Landmark Financial Corporation" />
+            </Link>
+          </Text>
+
+          <Flex display={{ base: "none", md: "flex" }} ml={10}>
+            <DesktopNav />
+          </Flex>
+        </Flex>
+
+        <Flex
+          // flex={{ base: 1, md: "auto" }}
+          align={"center"}
           ml={{ base: -2 }}
           display={{ base: "flex", md: "none" }}
         >
@@ -49,54 +67,11 @@ export function Navbar() {
             icon={
               isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
             }
-            variant={"ghost"}
+            colorScheme="yellow"
+            variant={"outline"}
             aria-label={"Toggle Navigation"}
           />
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: "center", md: "start" }}>
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={useColorModeValue("gray.800", "white")}
-          >
-            Logo
-          </Text>
-
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
-          </Flex>
-        </Flex>
-
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={"flex-end"}
-          direction={"row"}
-          spacing={6}
-        >
-          <Button
-            as={"a"}
-            fontSize={"sm"}
-            fontWeight={400}
-            variant={"link"}
-            href={"#"}
-          >
-            Sign In
-          </Button>
-          <Button
-            as={"a"}
-            display={{ base: "none", md: "inline-flex" }}
-            fontSize={"sm"}
-            fontWeight={600}
-            color={"white"}
-            bg={"pink.400"}
-            href={"#"}
-            _hover={{
-              bg: "pink.300",
-            }}
-          >
-            Sign Up
-          </Button>
-        </Stack>
       </Flex>
 
       <Collapse in={isOpen} animateOpacity>
@@ -107,9 +82,9 @@ export function Navbar() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
-  const popoverContentBgColor = useColorModeValue("white", "gray.800");
+  const linkColor = "white";
+  const linkHoverColor = "yellow.400";
+  const popoverContentBgColor = "white";
 
   return (
     <Stack direction={"row"} spacing={4}>
@@ -117,8 +92,7 @@ const DesktopNav = () => {
         <Box key={navItem.label}>
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
-              <Box
-                as="a"
+              <Link
                 p={2}
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
@@ -130,7 +104,7 @@ const DesktopNav = () => {
                 }}
               >
                 {navItem.label}
-              </Box>
+              </Link>
             </PopoverTrigger>
 
             {navItem.children && (
@@ -138,6 +112,7 @@ const DesktopNav = () => {
                 border={0}
                 boxShadow={"xl"}
                 bg={popoverContentBgColor}
+                color={"black"}
                 p={4}
                 rounded={"xl"}
                 minW={"sm"}
@@ -165,13 +140,13 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
+      _hover={{ bg: "yellow.400" }}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
           <Text
             transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
+            _groupHover={{ color: "black" }}
             fontWeight={500}
           >
             {label}
@@ -187,7 +162,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
           align={"center"}
           flex={1}
         >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
+          <Icon color={"black"} w={5} h={5} as={ChevronRightIcon} />
         </Flex>
       </Stack>
     </Box>
@@ -196,11 +171,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
 
 const MobileNav = () => {
   return (
-    <Stack
-      bg={useColorModeValue("white", "gray.800")}
-      p={4}
-      display={{ md: "none" }}
-    >
+    <Stack bg={"white"} color="black" p={4} display={{ md: "none" }}>
       {NAV_ITEMS.map((navItem) => (
         <MobileNavItem key={navItem.label} {...navItem} />
       ))}
@@ -223,10 +194,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           textDecoration: "none",
         }}
       >
-        <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
-        >
+        <Text fontWeight={600} color={"black"}>
           {label}
         </Text>
         {children && (
@@ -246,7 +214,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
           pl={4}
           borderLeft={1}
           borderStyle={"solid"}
-          borderColor={useColorModeValue("gray.200", "gray.700")}
+          borderColor={"gray.400"}
           align={"start"}
         >
           {children &&
@@ -270,41 +238,54 @@ interface NavItem {
 
 const NAV_ITEMS: Array<NavItem> = [
   {
-    label: "Inspiration",
+    label: "About Us",
     children: [
       {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
+        label: "Director",
+        href: "/about/director",
       },
       {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
+        label: "Overview",
+        href: "/about/overview",
+      },
+      {
+        label: "Partners",
+        href: "/about/partners",
       },
     ],
   },
   {
-    label: "Find Work",
+    label: "Services",
     children: [
       {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
+        label: "First Home Buyers",
+        href: "/services/first-home-buyers",
       },
       {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
+        label: "Home Upgrade",
+        href: "/services/home-upgrade",
+      },
+      {
+        label: "Investment Property Loans",
+        href: "/services/investment-property-loans",
+      },
+      {
+        label: "Refinancing",
+        href: "/services/refinancing",
       },
     ],
   },
   {
-    label: "Learn Design",
-    href: "#",
+    label: "Mortgage Resources",
+    children: [
+      {
+        label: "Land Transfer (Stamp) Duty Calculator",
+        href: "https://www.e-business.sro.vic.gov.au/calculators/land-transfer-duty",
+      },
+    ],
   },
   {
-    label: "Hire Designers",
-    href: "#",
+    label: "Contact",
+    href: "/contact",
   },
 ];

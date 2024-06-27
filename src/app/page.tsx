@@ -2,13 +2,15 @@
 import { Link } from "@chakra-ui/next-js";
 
 import Hero from "./components/home/hero";
+import Carousel from "./components/home/carousel";
 
 export default function Home() {
   return (
     <>
       <Hero />
+      {/* <Carousel /> */}
 
-      <Link
+      {/* <Link
         href="/about/director"
         color="blue.400"
         _hover={{ color: "blue.500" }}
@@ -25,7 +27,7 @@ export default function Home() {
       </Link>
       <Link href="/services/refinancing">Refinancing</Link>
 
-      <Link href="/contact">Contact</Link>
+      <Link href="/contact">Contact</Link> */}
     </>
   );
 }
