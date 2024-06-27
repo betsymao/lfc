@@ -180,16 +180,14 @@ const MobileNav = () => {
 };
 
 const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const { isOpen, onToggle } = useDisclosure();
-
   return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Box
-        py={2}
+    <Stack spacing={4}>
+      <Link
+        py={4}
+        borderBottom={"1px solid"}
+        borderColor={"gray.500"}
         as="a"
         href={href ?? "#"}
-        justifyContent="space-between"
-        alignItems="center"
         _hover={{
           textDecoration: "none",
         }}
@@ -197,34 +195,16 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         <Text fontWeight={600} color={"black"}>
           {label}
         </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={"all .25s ease-in-out"}
-            transform={isOpen ? "rotate(180deg)" : ""}
-            w={6}
-            h={6}
-          />
-        )}
-      </Box>
+      </Link>
 
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: "0!important" }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={"solid"}
-          borderColor={"gray.400"}
-          align={"start"}
-        >
-          {children &&
-            children.map((child) => (
-              <Box as="a" key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Box>
-            ))}
-        </Stack>
-      </Collapse>
+      <Stack>
+        {children &&
+          children.map((child) => (
+            <Link as="a" key={child.label} color={"gray.500"} href={child.href}>
+              {child.label}
+            </Link>
+          ))}
+      </Stack>
     </Stack>
   );
 };
