@@ -8,7 +8,6 @@ import {
   Box,
   Container,
   Flex,
-  Image,
   SimpleGrid,
   Stack,
   HStack,
@@ -18,7 +17,7 @@ import {
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <Text fontWeight={"500"} fontSize={"lg"} mb={2}>
+    <Text fontWeight={"500"} fontSize={"lg"} mb={2} color={"yellow.500"}>
       {children}
     </Text>
   );
@@ -27,34 +26,21 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
 export function Footer() {
   return (
     <Box bg={"black"} color={"white"}>
-      <Container as={Stack} maxW="992px" px={{ base: 4, lg: 0 }} pt={10} pb={4}>
+      <Container
+        as={Stack}
+        maxW="992px"
+        px={{ base: 4, lg: 0 }}
+        pt={{ base: 4, md: 10 }}
+        pb={4}
+      >
         <SimpleGrid
           templateColumns={{
             sm: "1fr",
             md: "1fr 1fr",
-            // lg: "2fr 1fr 1fr 1fr",
             lg: "1fr 2fr 2fr 2fr",
           }}
           spacing={8}
         >
-          {/* <Stack spacing={6}>
-            <Box>
-              <Image
-                src="/logo.svg"
-                alt="Landmark Financial Corporation Alternative Logo"
-              />
-            </Box>
-            <Text>
-              <Text as="b">Lawrence Mao</Text>
-              <br></br>
-              Director/Senior Mortgage Advisor
-              <br></br>
-              <br></br>
-              Suite 10/1 Main St, Box Hill VIC 3128<br></br>
-              <Text as="b">Mobile:</Text> 0413 108 186<br></br>
-              <Text as="b">Email:</Text> law@landmarkfinancial.com.au
-            </Text>
-          </Stack> */}
           <Stack align={"flex-start"}>
             <ListHeader>About Us</ListHeader>
             <Box>
@@ -115,19 +101,21 @@ export function Footer() {
         </SimpleGrid>
 
         <Flex
+          borderTop={"1px solid"}
+          borderColor={"gray.700"}
           direction={{ base: "column", md: "row" }}
           justify={{ md: "space-between" }}
           align={{ md: "flex-end" }}
-          mt={8}
+          mt={{ base: 2, md: 6 }}
         >
-          <Box py={2}>
+          <Box py={4}>
             <Text fontSize={"sm"}>
               Landmark Financial Corporation Pty Ltd.<br></br>
               Australian Credit License 123456789<br></br>
               ABN 1234567891234
             </Text>
           </Box>
-          <Box py={2}>
+          <Box py={4}>
             <Text fontSize={"sm"}>
               © 2024 Landmark Financial Corporation Pty Ltd.
             </Text>
