@@ -29,7 +29,7 @@ export function Navbar() {
         bg={"black"}
         color={"white"}
         minH={"60px"}
-        py={{ base: 4 }}
+        py={{ base: 4, md: 10 }}
         px={{ base: 4 }}
       >
         {/* Navbar items: logo and nav */}
@@ -77,7 +77,7 @@ export function Navbar() {
 
 const DesktopNav = () => {
   const linkColor = "white";
-  const linkHoverColor = "yellow.400";
+  const linkHoverColor = "yellow.500";
   const popoverContentBgColor = "white";
 
   return (
@@ -134,7 +134,7 @@ const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
       display={"block"}
       p={2}
       rounded={"md"}
-      _hover={{ bg: "yellow.400" }}
+      _hover={{ bg: "yellow.500" }}
     >
       <Stack direction={"row"} align={"center"}>
         <Box>
