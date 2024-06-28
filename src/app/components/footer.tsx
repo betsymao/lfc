@@ -10,8 +10,6 @@ import {
   Flex,
   SimpleGrid,
   Stack,
-  HStack,
-  VStack,
   Text,
 } from "@chakra-ui/react";
 
