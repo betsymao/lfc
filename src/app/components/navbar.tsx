@@ -1,8 +1,9 @@
 "use client";
+
 import { Link } from "@chakra-ui/next-js";
+
 import {
   Box,
-  Button,
   Flex,
   Text,
   IconButton,
@@ -17,18 +18,15 @@ import {
   useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-} from "@chakra-ui/icons";
+
+import { HamburgerIcon, CloseIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 export function Navbar() {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
     <Box>
+      {/* Navbar */}
       <Flex
         bg={"black"}
         color={"white"}
@@ -36,32 +34,23 @@ export function Navbar() {
         py={{ base: 4 }}
         px={{ base: 4 }}
       >
-        <Flex
-          flex={{ base: 1 }}
-          align={"center"}
-          // justify={{ base: "center", md: "start" }}
-        >
-          <Text
-            textAlign={useBreakpointValue({ base: "center", md: "left" })}
-            fontFamily={"heading"}
-            color={"white"}
-          >
+        {/* Navbar items: logo and nav */}
+        <Flex flex={{ base: 1 }} align={"center"} justify={"start"}>
+          {/* Brand logo */}
+          <Box>
             <Link href="/">
               <Image src="/logo.svg" alt="Landmark Financial Corporation" />
             </Link>
-          </Text>
+          </Box>
 
+          {/* Desktop nav */}
           <Flex display={{ base: "none", md: "flex" }} ml={10}>
             <DesktopNav />
           </Flex>
         </Flex>
 
-        <Flex
-          // flex={{ base: 1, md: "auto" }}
-          align={"center"}
-          ml={{ base: -2 }}
-          display={{ base: "flex", md: "none" }}
-        >
+        {/* Nav toggle */}
+        <Flex align={"center"} display={{ base: "flex", md: "none" }}>
           <IconButton
             onClick={onToggle}
             icon={
@@ -74,6 +63,7 @@ export function Navbar() {
         </Flex>
       </Flex>
 
+      {/* Mobile nav */}
       <Collapse in={isOpen} animateOpacity>
         <MobileNav />
       </Collapse>
