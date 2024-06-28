@@ -32,18 +32,29 @@ export function Footer() {
           templateColumns={{
             sm: "1fr",
             md: "1fr 1fr",
-            lg: "2fr 1fr 1fr 1fr",
+            // lg: "2fr 1fr 1fr 1fr",
+            lg: "1fr 2fr 2fr 2fr",
           }}
           spacing={8}
         >
-          <Stack spacing={6}>
+          {/* <Stack spacing={6}>
             <Box>
               <Image
                 src="/logo.svg"
                 alt="Landmark Financial Corporation Alternative Logo"
               />
             </Box>
-          </Stack>
+            <Text>
+              <Text as="b">Lawrence Mao</Text>
+              <br></br>
+              Director/Senior Mortgage Advisor
+              <br></br>
+              <br></br>
+              Suite 10/1 Main St, Box Hill VIC 3128<br></br>
+              <Text as="b">Mobile:</Text> 0413 108 186<br></br>
+              <Text as="b">Email:</Text> law@landmarkfinancial.com.au
+            </Text>
+          </Stack> */}
           <Stack align={"flex-start"}>
             <ListHeader>About Us</ListHeader>
             <Box>
@@ -79,6 +90,26 @@ export function Footer() {
               <Link href="https://www.e-business.sro.vic.gov.au/calculators/land-transfer-duty">
                 Land Transfer (Stamp) Duty Calculator
               </Link>
+            </Box>
+          </Stack>
+          <Stack align={"flex-start"}>
+            <ListHeader>Contact</ListHeader>
+            <Box>
+              <Text>
+                {/* <Text as="b">Lawrence Mao</Text>
+                <br></br>
+                Director/Senior Mortgage Advisor
+                <br></br>
+                <br></br> */}
+                <Text as="b">Address:</Text> Suite 10/1 Main St,<br></br>
+                Box Hill VIC 3128
+                <br></br>
+                <br></br>
+                <Text as="b">Mobile:</Text> 0413 108 186
+                <br></br>
+                <br></br>
+                <Text as="b">Email:</Text> law@landmarkfinancial.com.au
+              </Text>
             </Box>
           </Stack>
         </SimpleGrid>
