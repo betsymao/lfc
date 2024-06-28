@@ -35,7 +35,13 @@ export function Navbar() {
         px={{ base: 4 }}
       >
         {/* Navbar items: logo and nav */}
-        <Flex flex={{ base: 1 }} align={"center"} justify={"start"}>
+        <Flex
+          flex={{ base: 1 }}
+          align={"center"}
+          justify={"space-between"}
+          maxW="992px"
+          mx="auto"
+        >
           {/* Brand logo */}
           <Box>
             <Link href="/">
@@ -83,7 +89,7 @@ const DesktopNav = () => {
           <Popover trigger={"hover"} placement={"bottom-start"}>
             <PopoverTrigger>
               <Link
-                p={2}
+                // p={2}
                 href={navItem.href ?? "#"}
                 fontSize={"sm"}
                 fontWeight={500}
