@@ -4,6 +4,7 @@ import { Link } from "@chakra-ui/next-js";
 
 import {
   Box,
+  Container,
   Flex,
   Text,
   IconButton,
@@ -30,41 +31,47 @@ export function Navbar() {
         color={"white"}
         minH={"60px"}
         py={{ base: 4, md: 10 }}
-        px={{ base: 4 }}
+        // px={{ base: 4 }}
       >
-        {/* Navbar items: logo and nav */}
-        <Flex
-          flex={{ base: 1 }}
-          align={"center"}
-          justify={"space-between"}
-          maxW="992px"
-          mx="auto"
-        >
-          {/* Brand logo */}
-          <Box>
-            <Link href="/">
-              <Image src="/logo.svg" alt="Landmark Financial Corporation" />
-            </Link>
-          </Box>
+        <Container display="flex" maxW="container.lg">
+          {/* Navbar items: logo and nav */}
+          <Flex
+            flex={{ base: 1 }}
+            align={"center"}
+            justify={"space-between"}
+            // maxW="992px"
+            // mx="auto"
+          >
+            {/* Brand logo */}
+            <Box>
+              <Link href="/">
+                <Image src="/logo.svg" alt="Landmark Financial Corporation" />
+              </Link>
+            </Box>
 
-          {/* Desktop nav */}
-          <Flex display={{ base: "none", md: "flex" }} ml={10}>
-            <DesktopNav />
+            {/* Desktop nav */}
+            <Flex display={{ base: "none", md: "flex" }} ml={10}>
+              <DesktopNav />
+            </Flex>
           </Flex>
-        </Flex>
 
-        {/* Nav toggle */}
-        <Flex align={"center"} display={{ base: "flex", md: "none" }}>
-          <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            colorScheme="yellow"
-            variant={"outline"}
-            aria-label={"Toggle Navigation"}
-          />
-        </Flex>
+          {/* Nav toggle */}
+          <Flex align={"center"} display={{ base: "flex", md: "none" }}>
+            <IconButton
+              onClick={onToggle}
+              icon={
+                isOpen ? (
+                  <CloseIcon w={3} h={3} />
+                ) : (
+                  <HamburgerIcon w={5} h={5} />
+                )
+              }
+              colorScheme="yellow"
+              variant={"outline"}
+              aria-label={"Toggle Navigation"}
+            />
+          </Flex>
+        </Container>
       </Flex>
 
       {/* Mobile nav */}
@@ -89,8 +96,8 @@ const DesktopNav = () => {
               <Link
                 // p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"sm"}
-                fontWeight={500}
+                fontSize={{ md: "md", lg: "lg" }}
+                fontWeight={600}
                 color={linkColor}
                 _hover={{
                   textDecoration: "none",
@@ -213,20 +220,20 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "About Us",
-    children: [
-      {
-        label: "Director",
-        href: "/about/director",
-      },
-      {
-        label: "Overview",
-        href: "/about/overview",
-      },
-      {
-        label: "Partners",
-        href: "/about/partners",
-      },
-    ],
+    // children: [
+    //   {
+    //     label: "Director",
+    //     href: "/about/director",
+    //   },
+    //   {
+    //     label: "Overview",
+    //     href: "/about/overview",
+    //   },
+    //   {
+    //     label: "Partners",
+    //     href: "/about/partners",
+    //   },
+    // ],
   },
   {
     label: "Services",
