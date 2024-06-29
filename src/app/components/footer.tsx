@@ -15,7 +15,7 @@ import {
 
 const ListHeader = ({ children }: { children: ReactNode }) => {
   return (
-    <Text fontWeight={"500"} fontSize={"lg"} mb={2} color={"yellow.500"}>
+    <Text fontWeight={"600"} fontSize={"lg"} mb={2} color={"yellow.500"}>
       {children}
     </Text>
   );
@@ -26,8 +26,9 @@ export function Footer() {
     <Box bg={"black"} color={"white"}>
       <Container
         as={Stack}
-        maxW="992px"
-        px={{ base: 4, lg: 0 }}
+        // maxW="992px"
+        maxW="container.lg"
+        // px={{ base: 4, lg: 0 }}
         pt={{ base: 4, md: 10 }}
         pb={4}
       >
