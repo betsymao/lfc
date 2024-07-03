@@ -2,13 +2,19 @@
 import { Link } from "@chakra-ui/next-js";
 
 import Hero from "./components/home/hero";
-import Carousel from "./components/home/carousel";
+import Services from "./components/home/services";
+import About from "./components/home/about";
+import Contact from "./components/home/contact";
+import Partners from "./components/home/partners";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      {/* <Carousel /> */}
+      <Services />
+      <About />
+      <Partners />
+      <Contact />
 
       {/* <Link
         href="/about/director"
