@@ -26,13 +26,7 @@ export function Navbar() {
   return (
     <Box>
       {/* Navbar */}
-      <Flex
-        bg={"black"}
-        color={"white"}
-        minH={"60px"}
-        py={{ base: 4, md: 10 }}
-        // px={{ base: 4 }}
-      >
+      <Flex bg={"black"} color={"white"} minH={"60px"} py={4}>
         <Container display="flex" maxW="container.lg">
           {/* Navbar items: logo and nav */}
           <Flex
@@ -260,7 +254,7 @@ const NAV_ITEMS: Array<NavItem> = [
     label: "Mortgage Resources",
     children: [
       {
-        label: "Land Transfer (Stamp) Duty Calculator",
+        label: "Stamp Duty Calculator",
         href: "https://www.e-business.sro.vic.gov.au/calculators/land-transfer-duty",
       },
     ],
