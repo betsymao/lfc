@@ -70,7 +70,7 @@ const Card = ({ heading, description, icon, href }: CardProps) => {
 
 export default function ServicesList() {
   return (
-    <Box className="services" py={24}>
+    <Box className="services" py={{ base: 8, md: 24 }}>
       <Container maxW={"container.lg"}>
         <Box pb="10">
           <Heading>Lorem ipsum dolor sit</Heading>
