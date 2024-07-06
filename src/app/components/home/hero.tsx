@@ -31,7 +31,7 @@ export default function Hero() {
           alignItems={"start"}
           justifyContent="center"
           height={{ base: "50vh", md: "100vh" }}
-          spacing={{ base: "0.75rem", md: "2rem" }}
+          spacing={{ base: "1rem", md: "2rem" }}
         >
           <Heading
             className="hero__heading"
@@ -47,7 +47,7 @@ export default function Hero() {
           >
             Lorem ipsum dolor sit amet.
           </Text>
-          <HStack spacing={{ base: 2, md: 4, lg: 6 }} wrap={"wrap"}>
+          <HStack spacing={{ base: 3, md: 4, lg: 6 }} wrap={"wrap"}>
             <Button
               className="hero__cta"
               as="a"
