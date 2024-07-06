@@ -42,7 +42,7 @@ function StatsCard(props: StatsCardProps) {
 
 export default function Partners() {
   return (
-    <Box py={10}>
+    <Box py={{ base: 8, md: 24 }}>
       <Script
         type="text/javascript"
         id="hs-script-loader"
