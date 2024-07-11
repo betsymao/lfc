@@ -1,6 +1,8 @@
 "use client";
-
+// https://medium.com/geekculture/using-owl-carousel-with-nextjs-e63a166225b0
 import Script from "next/script";
+
+import Slider from "../../js/slider";
 
 import {
   Box,
@@ -53,7 +55,7 @@ export default function Partners() {
 
       <Container maxW={"container.lg"}>
         <Heading>Partners</Heading>
-        <Text>Carousel of logos</Text>
+        <Slider />
       </Container>
     </Box>
   );
