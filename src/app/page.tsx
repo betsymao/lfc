@@ -4,8 +4,7 @@ import { Link } from "@chakra-ui/next-js";
 import Hero from "./components/home/hero";
 import Services from "./components/home/services";
 import About from "./components/home/about";
-import Contact from "./components/home/contact";
-import Partners from "./components/home/partners";
+import Partners from "./components/partners";
 
 export default function Home() {
   return (
@@ -14,7 +13,6 @@ export default function Home() {
       <Services />
       <About />
       <Partners />
-      <Contact />
 
       {/* <Link
         href="/about/director"
