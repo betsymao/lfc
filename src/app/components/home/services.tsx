@@ -31,7 +31,7 @@ interface CardProps {
   href: string;
 }
 
-const Card = ({ heading, description, icon, href }: CardProps) => {
+const Card = ({ heading, description, href }: CardProps) => {
   return (
     <Box
       className="services__item"
@@ -50,7 +50,7 @@ const Card = ({ heading, description, icon, href }: CardProps) => {
 
         <Link
           className="services__link"
-          href={"/"}
+          href={href}
           _hover={{
             color: "gray.500",
           }}
@@ -89,31 +89,31 @@ export default function ServicesList() {
             description={
               "Lorem ipsum dolor sit amet catetur, adipisicing elit."
             }
-            href={"#"}
-          />{" "}
+            href={"/services/first-home-buyers"}
+          />
           <Card
             heading={"Home Upgrade"}
             icon={<Icon as={FcAssistant} w={10} h={10} />}
             description={
               "Lorem ipsum dolor sit amet catetur, adipisicing elit."
             }
-            href={"#"}
-          />{" "}
+            href={"/services/home-upgrade"}
+          />
           <Card
             heading={"Investment Property Loans"}
             icon={<Icon as={FcAssistant} w={10} h={10} />}
             description={
               "Lorem ipsum dolor sit amet catetur, adipisicing elit."
             }
-            href={"#"}
-          />{" "}
+            href={"/services/investment-property-loans"}
+          />
           <Card
             heading={"Refinancing"}
             icon={<Icon as={FcAssistant} w={10} h={10} />}
             description={
               "Lorem ipsum dolor sit amet catetur, adipisicing elit."
             }
-            href={"#"}
+            href={"/services/refinancing"}
           />
         </Grid>
       </Container>
