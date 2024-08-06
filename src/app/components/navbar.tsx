@@ -214,6 +214,7 @@ interface NavItem {
 const NAV_ITEMS: Array<NavItem> = [
   {
     label: "About Us",
+    href: "/about",
     // children: [
     //   {
     //     label: "Director",
@@ -251,7 +252,7 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: "Mortgage Resources",
+    label: "Resources",
     children: [
       {
         label: "Stamp Duty Calculator",
@@ -260,7 +261,7 @@ const NAV_ITEMS: Array<NavItem> = [
     ],
   },
   {
-    label: "Contact",
+    label: "Contact Us",
     href: "/contact",
   },
 ];

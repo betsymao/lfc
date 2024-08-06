@@ -43,9 +43,19 @@ export function Footer() {
           spacing={8}
         >
           <Stack align={"flex-start"}>
-            <ListHeader>About Us</ListHeader>
+            {/* <ListHeader>About Us</ListHeader>
             <Box>
               <Link href="/about/director">Director</Link>
+            </Box>
+            <Box>
+              <Link href="/about/overview">Overview</Link>
+            </Box>
+            <Box>
+              <Link href="/about/partners">Partners</Link>
+            </Box> */}
+            <ListHeader>Sitemap</ListHeader>
+            <Box>
+              <Link href="/about">About Us</Link>
             </Box>
             <Box>
               <Link href="/about/overview">Overview</Link>
@@ -72,7 +82,7 @@ export function Footer() {
             </Box>
           </Stack>
           <Stack align={"flex-start"}>
-            <ListHeader>Mortgage Resources</ListHeader>
+            <ListHeader>Resources</ListHeader>
             <Box>
               <Link href="https://www.e-business.sro.vic.gov.au/calculators/land-transfer-duty">
                 Stamp Duty Calculator
