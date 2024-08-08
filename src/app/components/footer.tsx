@@ -37,35 +37,24 @@ export function Footer() {
         <SimpleGrid
           templateColumns={{
             sm: "1fr",
-            md: "1fr 1fr",
-            lg: "2fr 2fr 2fr 3fr",
+            md: "1fr 1fr 1fr",
           }}
           spacing={8}
         >
           <Stack align={"flex-start"}>
-            {/* <ListHeader>About Us</ListHeader>
-            <Box>
-              <Link href="/about/director">Director</Link>
-            </Box>
-            <Box>
-              <Link href="/about/overview">Overview</Link>
-            </Box>
-            <Box>
-              <Link href="/about/partners">Partners</Link>
-            </Box> */}
-            <ListHeader>Sitemap</ListHeader>
+            <ListHeader>Our Company</ListHeader>
             <Box>
               <Link href="/about">About Us</Link>
             </Box>
             <Box>
-              <Link href="/about/overview">Overview</Link>
+              <Link href="/about/#partners">Partners</Link>
             </Box>
             <Box>
-              <Link href="/about/partners">Partners</Link>
+              <Link href="/contact">Contact Us</Link>
             </Box>
           </Stack>
           <Stack align={"flex-start"}>
-            <ListHeader>Services</ListHeader>
+            <ListHeader>Our Services</ListHeader>
             <Box>
               <Link href="/services/first-home-buyers">First Home Buyers</Link>
             </Box>
@@ -82,15 +71,7 @@ export function Footer() {
             </Box>
           </Stack>
           <Stack align={"flex-start"}>
-            <ListHeader>Resources</ListHeader>
-            <Box>
-              <Link href="https://www.e-business.sro.vic.gov.au/calculators/land-transfer-duty">
-                Stamp Duty Calculator
-              </Link>
-            </Box>
-          </Stack>
-          <Stack align={"flex-start"}>
-            <ListHeader>Contact</ListHeader>
+            <ListHeader>Contact Us</ListHeader>
             <Flex alignItems={"center"} pb={2}>
               <Icon as={BsHouse} mr={"4"} />
               <Text>Suite 10/1 Main St, Box Hill VIC 3128</Text>
