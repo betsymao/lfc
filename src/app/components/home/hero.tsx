@@ -21,7 +21,7 @@ export default function Hero() {
     <Box
       className="hero"
       height={{ base: "50vh", md: "100vh" }}
-      backgroundImage={"url('/contact.jpg')"}
+      backgroundImage={"url('/hero.jpg')"}
       backgroundPosition={"bottom center"}
       backgroundSize={"cover"}
     >
