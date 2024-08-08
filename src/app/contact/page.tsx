@@ -7,6 +7,8 @@ import {
   Flex,
   Box,
   Heading,
+  Text,
+  VStack,
   Button,
   FormControl,
   FormLabel,
@@ -19,14 +21,51 @@ import {
 
 export default function Contact() {
   return (
-    <Flex className="contact" py={{ base: 8, md: 24 }}>
-      <Container maxWidth={"container.lg"}>
-        <Box maxW={{ base: "100%", lg: "50%" }}>
-          <Box pb={4}>
-            <Heading className="contact__heading">Contact</Heading>
-          </Box>
-          <Form />
-          {/* <form onSubmit={handleSubmit(onSubmit)}>
+    <Box>
+      <Box
+        className="contact-hero"
+        height={{ base: "25vh", md: "50vh" }}
+        backgroundImage={"url('/about.jpg')"}
+        backgroundPosition={"center"}
+        backgroundSize={"cover"}
+      >
+        <Container maxW="container.lg">
+          <VStack
+            color={"white"}
+            alignItems={"start"}
+            justifyContent="center"
+            height={{ base: "25vh", md: "50vh" }}
+            spacing={{ base: "1rem", md: "2rem" }}
+          >
+            <Heading
+              className="contact-hero__heading"
+              as="h1"
+              size={{ base: "2xl", md: "3xl", lg: "4xl" }}
+            >
+              Contact Us
+            </Heading>
+            <Text
+              className="contact-hero__text"
+              fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+              fontWeight={"semibold"}
+            >
+              Lorem ipsum dolor sit amet.
+            </Text>
+          </VStack>
+        </Container>
+      </Box>
+      <Flex className="contact" py={{ base: 8, md: 24 }}>
+        <Container maxWidth={"container.lg"}>
+          <Box
+          // maxW={{ base: "100%", lg: "50%" }}
+          >
+            <Box pb={8}>
+              <Heading className="contact__heading">
+                Placeholder heading text
+              </Heading>
+            </Box>
+            <Form />
+            {/* <form onSubmit={handleSubmit(onSubmit)}>
             <FormControl isInvalid={errors.name}>
               <FormLabel htmlFor="name" className="contact__form-label">
                 First name
@@ -85,8 +124,9 @@ export default function Contact() {
 
             <Input type="submit" className="contact__form-btn" />
           </form> */}
-        </Box>
-      </Container>
-    </Flex>
+          </Box>
+        </Container>
+      </Flex>
+    </Box>
   );
 }

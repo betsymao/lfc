@@ -119,6 +119,16 @@ export default function HookForm() {
         isLoading={isSubmitting}
         type="submit"
         className="contact__form-btn"
+        bgColor="yellow.500"
+        border="1px"
+        borderColor="transparent"
+        color="white"
+        _hover={{
+          bgColor: "transparent",
+          borderColor: "yellow.500",
+          color: "yellow.500",
+          textDecoration: "none",
+        }}
       >
         Submit
       </Button>
