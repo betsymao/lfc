@@ -182,7 +182,7 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
         borderBottom={"1px solid"}
         borderColor={"gray.500"}
         as="a"
-        href={href ?? "#"}
+        href={href ?? " "}
         _hover={{
           textDecoration: "none",
         }}
@@ -215,20 +215,6 @@ const NAV_ITEMS: Array<NavItem> = [
   {
     label: "About Us",
     href: "/about",
-    // children: [
-    //   {
-    //     label: "Director",
-    //     href: "/about/director",
-    //   },
-    //   {
-    //     label: "Overview",
-    //     href: "/about/overview",
-    //   },
-    //   {
-    //     label: "Partners",
-    //     href: "/about/partners",
-    //   },
-    // ],
   },
   {
     label: "Services",
